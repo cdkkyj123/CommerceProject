@@ -18,4 +18,20 @@ public class Product {
     public String toString() {
         return name + " | " + price + " | " + description;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getStock() {
+        return stock;
+    }
 }
