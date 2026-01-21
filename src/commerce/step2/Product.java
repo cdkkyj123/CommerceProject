@@ -1,4 +1,4 @@
-package commerce.step1;
+package commerce.step2;
 
 public class Product {
     String name;
@@ -17,21 +17,5 @@ public class Product {
     @Override
     public String toString() {
         return name + " | " + price + " | " + description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getStock() {
-        return stock;
     }
 }

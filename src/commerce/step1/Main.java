@@ -25,47 +25,31 @@ public class Main {
         System.out.println("예: y, 아니오: any key");
         String confirmMenu = sc.next();
         if (confirmMenu.equals("y")) {
+            System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
             for (int i = 0; i < products.size(); i++) {
                 System.out.println((i + 1) + ". " + products.get(i));
             }
             System.out.println(0 + ". 종료 | 프로그램 종료");
+            System.out.println("조회를 원하시는 상품의 번호를 입력하세요.");
 
             boolean run = true;
             while (run) {
-                int confirmQuit = sc.nextInt();
-                switch (confirmQuit) {
-                    case 1:
-                        System.out.println(products.get(0));
-                        System.out.println("해당 상품의 재고가 " + products.get(0).stock + "개 남았습니다.");
-                        System.out.println("다른 상품의 번호를 입력해주세요.");
-                        break;
-                    case 2:
-                        System.out.println(products.get(1));
-                        System.out.println("해당 상품의 재고가 " + products.get(1).stock + "개 남았습니다.");
-                        System.out.println("다른 상품의 번호를 입력해주세요.");
-                        break;
-                    case 3:
-                        System.out.println(products.get(2));
-                        System.out.println("해당 상품의 재고가 " + products.get(2).stock + "개 남았습니다.");
-                        System.out.println("다른 상품의 번호를 입력해주세요.");
-                        break;
-                    case 4:
-                        System.out.println(products.get(3));
-                        System.out.println("해당 상품의 재고가 " + products.get(3).stock + "개 남았습니다.");
-                        System.out.println("다른 상품의 번호를 입력해주세요.");
-                        break;
-                    case 0:
-                        System.out.println("커머스 플랫폼을 종료합니다.");
-                        run = false;
-                        break;
-                    default:
-                        System.out.println("해당 번호의 상품이 없습니다.");
-                        System.out.println("다른 상품의 번호를 입력해주세요.");
+                int selectedNum = sc.nextInt();
+                if (selectedNum == 0) {
+                    System.out.println("커머스 플랫폼을 종료합니다.");
+                    run = false;
+                } else if (selectedNum >= 1 && selectedNum <= products.size()) {
+                    Product selected = products.get(selectedNum - 1);
+                    System.out.println(selected);
+                    System.out.println("해당 상품의 재고가 " + selected.getStock() + "개 남았습니다.");
+                    System.out.println("다른 상품의 번호를 입력해주세요.");
+                } else {
+                    System.out.println("해당 번호의 상품이 없습니다.");
+                    System.out.println("다른 상품의 번호를 입력해주세요.");
                 }
             }
         } else {
             System.out.println("조회를 종료합니다.");
         }
-
     }
 }
