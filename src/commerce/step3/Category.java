@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
-    String categoryName;
+    private String categoryName;
 
     // 여기서 관리하겠다 선언
     private List<Product> products;
